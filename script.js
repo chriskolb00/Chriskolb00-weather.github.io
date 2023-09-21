@@ -28,7 +28,7 @@ let weather ={
         document.querySelector(".weather").classList.remove("loading");
         document.body.style.backgroundImage="url('https://source.unsplash.com/1600x900/?"+ name + "')";
        
-        for(i=1; i<7;i++){
+        for(i=1; i<3;i++){
             document.querySelector(".icon"+(i+1)).src=
                 "https://openweathermap.org/img/wn/"+ data.list[i].weather[0].icon+".png";
             document.querySelector(".description"+(i+1)).innerText=
@@ -38,7 +38,15 @@ let weather ={
             document.querySelector(".dayTemp"+(i+1)+"").innerText=
                 "Low: " +data.list[i].main.temp_min + 
                 "°F, high: "+ data.list[i].main.temp_max+"°F";
-       }
+        }
+        for(i=4; i<=7;i++){
+            document.querySelector(".icon"+(i)).src=
+                "https://openweathermap.org/img/wn/"+ data.list[i].weather[0].icon+".png";
+            document.querySelector(".description"+(i)).innerText=
+                ""+data.list[i].weather[0].description;
+            document.querySelector(".temp"+(i)).innerText=
+                ""+data.list[i].main.temp+"°F";
+        }
 
     },
    search: function(){

@@ -1,7 +1,5 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     height:100vh;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -9,13 +7,36 @@ body{
     background-image: url('https://source.unsplash.com/1600x900/?landscape');
     background-size: cover;
 }
+.head2{
+    margin-left:40%;
+    align-items: center;
+    justify-content: center;
+}
+.layer1, .layer2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5%;
+}
+.layer1 .card{
+    background:#000000d0;
+    color:#fff;
+    padding: 4em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 320px;
+    margin: 1em;
+    transition: 0.3s ease-in-out;    
+}
 .card {
     background:#000000d0;
     color:#fff;
-    padding:2em;
+    padding:1.5em;
     border-radius: 30px;
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
     margin: 1em;
     transition: 0.3s ease-in-out;
 }
@@ -97,19 +118,44 @@ h1.temp{
     flex-direction: row;
     height:auto;
 }
+
 @media(max-width:460px){
+    h1{
+        font-size: 20px;
+    }
+    .layer1{
+        max-width:300px;
+        align-items: center;
+        justify-content: space-evenly;
+        display:flex;
+        flex-direction: column;
+        margin-left: 40px;
+    }
+    .layer2{
+        display:flex;
+        flex-direction: row;
+        margin:5%;
+        justify-content: space-evenly;
+    }
     body{
         display: inline-block;
     }
+    .layer1 .card{
+        padding:0.5em;
+        font-size:12px;
+    }
+    .layer2 .card{
+        padding:0.5em;
+        font-size: 10px;
+    }
     .card#mainCard{
         margin:15px 10px;
-        width:300px;
     }
     .big-box{
         display:flex;
         flex-direction: column;
     }
-    .big-box .card{
-        width:80%;
+    .card{
+        width:70%;
     }
 }
